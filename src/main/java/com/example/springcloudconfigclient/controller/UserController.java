@@ -30,7 +30,12 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public User saveUser(@RequestBody User user){
+    public User saveUser(@RequestParam String username, @RequestParam Long age, @RequestParam String sex){
+        User user = User.builder()
+                .username(username)
+                .age(age)
+                .sex(sex)
+                .build();
         return service.saveUser(user);
     }
 
