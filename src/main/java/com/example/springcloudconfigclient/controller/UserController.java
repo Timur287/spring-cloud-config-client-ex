@@ -29,7 +29,7 @@ public class UserController {
         return service.getAllUsers();
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public User saveUser(@RequestParam(value = "username", required = false) String username, @RequestParam(value = "age", required = false) Long age, @RequestParam(value = "sex", required = false) String sex){
         User user = User.builder()
                 .username(username)
