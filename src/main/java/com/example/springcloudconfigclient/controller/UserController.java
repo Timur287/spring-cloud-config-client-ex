@@ -14,6 +14,11 @@ public class UserController {
 
     private UserService service;
 
+    @GetMapping("/hi")
+    public String hello(){
+        return "Hello heroku!";
+    }
+
     @GetMapping("/getById/{id}")
     public User getById(@PathVariable Long id){
         return service.getUser(id).orElseThrow(IllegalArgumentException::new);
